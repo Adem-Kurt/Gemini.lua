@@ -20,3 +20,10 @@ dependencies = {
   "luasocket >= 3.0-rc1",
   "dkjson >= 2.5",
 }
+
+build = {
+   type = "builtin",
+   modules = {
+      gemini = "gemini.lua"
+   }
+}
