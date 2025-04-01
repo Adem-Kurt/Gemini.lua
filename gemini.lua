@@ -27,8 +27,6 @@ local function send_api_request(url, method, body)
         sink = ltn12.sink.table(response_body)
     }
 
-    print("HTTP Code: ", code)
-
     if #response_body == 0 then
         return nil, "Error: Empty response from API"
     end
