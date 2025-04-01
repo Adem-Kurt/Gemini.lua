@@ -3,7 +3,8 @@ rockspec_format = "3.0"
 package = "geminilua"
 version = "1.0.0-2"
 source = {
-  url = "https://github.com/Adem-Kurt/Gemini.lua/blob/main/gemini.lua",
+  url = "git://github.com/Adem-Kurt/Gemini.lua",
+  branch = "main"
 }
 
 description = {
