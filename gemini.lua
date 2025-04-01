@@ -27,13 +27,18 @@ local function send_api_request(url, method, body)
         sink = ltn12.sink.table(response_body)
     }
 
-    if code ~= 200 then
-        return nil, "Error: " .. tostring(code) .. " - " .. table.concat(response_body)
+    print("HTTP Code: ", code)
+
+    if #response_body == 0 then
+        return nil, "Error: Empty response from API"
     end
 
-    local response_json, err = json.decode(table.concat(response_body))
-    if err then
-        return nil, "JSON Decode Error: " .. err
+    local raw_json = table.concat(response_body):gsub("^%s*(.-)%s*$", "%1") -- Trim whitespace
+
+    local response_json, err = json.decode(raw_json)
+    if not response_json then
+        print("JSON Decode Error: ", err)
+        return nil, "JSON Decode Error: " .. tostring(err)
     end
 
     return response_json
