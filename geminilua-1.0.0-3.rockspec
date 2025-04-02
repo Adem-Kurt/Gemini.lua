@@ -1,7 +1,7 @@
 rockspec_format = "3.0"
 
 package = "geminilua"
-version = "1.0.0-2"
+version = "1.0.0-3"
 source = {
   url = "git://github.com/Adem-Kurt/Gemini.lua",
   branch = "main"
@@ -20,6 +20,7 @@ dependencies = {
   "lua >= 5.1",
   "luasocket >= 3.0-rc1",
   "dkjson >= 2.5",
+  "luasec >= 1.3.0",
 }
 
 build = {

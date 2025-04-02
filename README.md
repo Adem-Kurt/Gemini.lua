@@ -18,12 +18,14 @@ Alternatively, you can download the repository and include it in your Lua projec
 
 - `dkjson`
 - `luasocket`
+- `luasec`
 
 If you installed `gemini.lua` via Luarocks, these dependencies will be installed automatically. Otherwise, you can install them manually:
 
 ```sh
 luarocks install dkjson
 luarocks install luasocket
+luarocks install luasec
 ```
 
 ## Example Usage
