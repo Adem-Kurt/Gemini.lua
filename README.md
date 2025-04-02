@@ -18,12 +18,14 @@ Alternatively, you can download the repository and include it in your Lua projec
 
 - `dkjson`
 - `luasocket`
+- `luasec`
 
 If you installed `gemini.lua` via Luarocks, these dependencies will be installed automatically. Otherwise, you can install them manually:
 
 ```sh
 luarocks install dkjson
 luarocks install luasocket
+luarocks install luasec
 ```
 
 ## Example Usage
@@ -35,7 +37,7 @@ local gemini = require("gemini")
 
 gemini.API_KEY = "YOUR_API_KEY"  -- Replace with your actual API key
 
-local model = gemini.models.FLASH
+local model = gemini.models._2_0_.FLASH
 print("What is your question?")
 local prompt = io.read()
 
