@@ -37,7 +37,7 @@ local gemini = require("gemini")
 
 gemini.API_KEY = "YOUR_API_KEY"  -- Replace with your actual API key
 
-local model = gemini.models.FLASH
+local model = gemini.models._2_0_.FLASH
 print("What is your question?")
 local prompt = io.read()
 

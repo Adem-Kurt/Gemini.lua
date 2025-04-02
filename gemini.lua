@@ -8,8 +8,40 @@ gemini.API_KEY = ""
 gemini.BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/"
 
 gemini.models = {
-    FLASH = "gemini-2.0-flash",
-    PRO = "gemini-2.0-pro"
+    _2_0_ = {
+	PRO = "gemini-2.0-pro",
+        FLASH = "gemini-2.0-flash",
+	FLASH_LITE = "gemini-2.0-flash-lite",
+    },
+
+    _1_5_ = {
+        PRO_15 = "gemini-1.5-pro",
+        FLASH_15 = "gemini-1.5-flash",
+        FLASH_15_8B = "gemini-1.5-flash-8b",
+    },
+
+    EXPERIMENTAL = {
+        _2_5_ = {
+		PRO_EXP_03_25 = "gemini-2.5-pro-exp-03-25",
+	},
+
+	_2_0_ = {
+		PRO_EXP_02_05 = "gemini-2.0-pro-exp-02-05",
+		FLASH_EXP = "gemini-2.0-flash-exp",
+		PRO_EXP_1206 = "gemini-exp-1206",
+		FLASH_THINKING_EXP = "gemini-2.0-flash-thinking-exp-1219",
+	},
+
+	_1_5_ = {
+		PRO_EXP_0827 = "gemini-1.5-pro-exp-0827",
+		PRO_EXP_0801 = "gemini-1.5-pro-exp-0801",
+		FLASH_EXP_8B_0924 = "gemini-1.5-flash-8b-exp-0924",
+		FLASH_EXP_8B_0827 = "gemini-1.5-flash-8b-exp-0827",
+	},
+
+	EXP_1121 = "gemini-exp-1121",
+	EXP_1114 = "gemini-exp-1114",
+    },
 }
 
 local function send_api_request(url, method, body)
