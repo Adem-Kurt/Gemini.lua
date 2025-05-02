@@ -19,13 +19,13 @@ description = {
 dependencies = {
   "lua >= 5.1",
   "luasocket >= 3.0-rc1",
-  "dkjson >= 2.5",
+  "lua-cjson >= 2.1.0.10-1",
   "luasec >= 1.3.0",
 }
 
 build = {
    type = "builtin",
    modules = {
-      gemini = "gemini.lua"
+      gemini = "src/gemini.lua"
    }
 }
