@@ -16,14 +16,14 @@ Alternatively, you can download the repository and include it in your Lua projec
 
 `gemini.lua` requires the following libraries:
 
-- `dkjson`
+- `lua-cjson`
 - `luasocket`
 - `luasec`
 
 If you installed `gemini.lua` via Luarocks, these dependencies will be installed automatically. Otherwise, you can install them manually:
 
 ```sh
-luarocks install dkjson
+luarocks install lua-cjson
 luarocks install luasocket
 luarocks install luasec
 ```
@@ -35,13 +35,13 @@ Here’s a basic example of how to use `gemini.lua`:
 ```lua
 local gemini = require("gemini")
 
-gemini.API_KEY = "YOUR_API_KEY"  -- Replace with your actual API key
+local api_key = "YOUR_API_KEY"  -- Replace with your actual API key
 
-local model = gemini.models._2_0_.FLASH
+local client = gemini.Client.new(api_key, "gemini-2.0-flash")
 print("What is your question?")
 local prompt = io.read()
 
-local response, err = gemini.send_request(model, prompt)
+local response, err = client:generate_content(prompt)
 
 if response then
     print(response)
@@ -54,11 +54,14 @@ end
 
 Planned features for future releases of `gemini.lua` include:
 - **Media Support**: Improve functionality for sending and receiving media.
-- **Chat Support**: Add chat functionality to allow the library to remember previous messages and context.
 
 ## Contributing
 
 If you have suggestions for new features or improvements, feel free to open an issue or submit a pull request.
+
+## Contact 
+
+You can contact me on Discord. My username is `tbkurt`
 
 ## License
 
