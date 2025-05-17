@@ -64,7 +64,7 @@ function gemini.Client:generate_content(prompt, systemInstruction)
         },
         systemInstruction = {
             parts = {
-                { text = systemInstruction}
+                { text = systemInstruction or "" }
             }
         }
     })
